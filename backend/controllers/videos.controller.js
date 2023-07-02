@@ -38,7 +38,7 @@ const getVideos=catchAsync(async(req,res)=>{
 
     if (!query.genres && !query.contentRating && !query.title) {
         let videos = await videoServiceInstance.getVideos(sortBy);
-        if (!videos) {
+        if (!videos.length) {
             throw new ApiError(httpStatus.NOT_FOUND)
         };
         res.send({videos:videos});
@@ -47,7 +47,7 @@ const getVideos=catchAsync(async(req,res)=>{
     else {
         let filter = {};
         if (query.title != null) {
-            let title= new RegExp("^" + query.title, "i")
+            let title= new RegExp(query.title, "i")
             filter.title = title;
         };
         if (query.genres != null && !(query.genres.includes("All"))) {
@@ -66,7 +66,7 @@ const getVideos=catchAsync(async(req,res)=>{
             filter.contentRating = query.contentRating;
         };
         let videos = await videoServiceInstance.filteredVideos(filter, sortBy);
-        if (!videos) {
+        if (!videos.length) {
             throw new ApiError(httpStatus.NOT_FOUND)
         };
         res.send({videos: videos})
