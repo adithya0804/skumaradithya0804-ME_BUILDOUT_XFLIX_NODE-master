@@ -1,0 +1,23 @@
+.card {
+  background-color: #181818 !important;
+      box-shadow: none !important;
+    border: none !important;
+  }
+  .cardBody{
+    background-color: #181818 !important;
+  }
+  
+
+  
+  .title {
+   
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .subtitle {
+    font-weight: 400;
+    color: #d1d5da !important ;
+  }

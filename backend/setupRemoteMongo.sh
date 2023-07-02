@@ -1,0 +1,1 @@
+mongoimport --uri  "mongodb://ac-gmojojk-shard-00-00.llpl6wx.mongodb.net:27017,ac-gmojojk-shard-00-01.llpl6wx.mongodb.net:27017,ac-gmojojk-shard-00-02.llpl6wx.mongodb.net:27017/xflix?replicaSet=atlas-xce1e6-shard-0" --ssl --authenticationDatabase admin --username adithya --password adithya --drop --collection videos --file data/video.json
